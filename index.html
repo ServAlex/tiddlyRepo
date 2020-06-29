@@ -11340,7 +11340,7 @@ using fastled with 6812
 https://www.partsnotincluded.com/fastled-rgbw-neopixels-sk6812/
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200629204211252" modified="20200629211510679" tags="ffmpeg [[video editing]]" title="ffmpeg video editing">
+<div created="20200629204211252" modified="20200629221648176" tags="ffmpeg [[video editing]]" title="ffmpeg video editing">
 <pre>&quot;&quot;&quot;
 encooding
 https://trac.ffmpeg.org/wiki/Encode/H.264
@@ -11358,6 +11358,9 @@ ffmpeg -ss 00:01:00 -i input.mp4 -to 00:02:00 -c copy -avoid_negative_ts 1 outpu
 00:02:00: This is the time your trimmed video will end with.
 -c copy: This is an option to trim via stream copy. (NB: Very fast)
 -avoid_negative_ts 1 to use this segment with demux concat later
+
+fade in fade out
+ffmpeg -i video.mp4 -vf &quot;fade=t=in:st=0:d=10,fade=t=out:st=10:d=5&quot; -c:a copy out.mp4
 
 &quot;&quot;&quot;</pre>
 </div>
