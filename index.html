@@ -10807,7 +10807,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 [[dotnet core lambda|aws lambda dotnet core]]
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200731114533918" modified="20200803132805880" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
+<div created="20200731114533918" modified="20200803133308658" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
 <pre>&quot;&quot;&quot;
 https://docs.aws.amazon.com/lambda/latest/dg/lambda-csharp.html
 https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools
@@ -10822,7 +10822,8 @@ create project
 `dotnet new lambda.EmptyFunction --name dotnetTestFunction`
 
 build for deployment to aws
-`dotnet lambda deploy-function dotnetTestFunction --function-role cit-staging-lambda-generate-url`
+`dotnet lambda deploy-function cit-dev-generate-thumbnail --function-role cit-staging-lambda-generate-url`
+generates .zip and uploads to aws
 
 generates deployment zip that can be uploaded to aws
 
