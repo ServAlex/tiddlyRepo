@@ -10807,7 +10807,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 [[dotnet core lambda|aws lambda dotnet core]]
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200731114533918" modified="20200804120839946" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
+<div created="20200731114533918" modified="20200804122212006" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
 <pre>&quot;&quot;&quot;
 https://docs.aws.amazon.com/lambda/latest/dg/lambda-csharp.html
 https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools
@@ -10826,8 +10826,9 @@ build for deployment to aws
 generates .zip and uploads to aws, generated zip can be uploaded manually through interface
 if specified lamda doesn't exist yet, creates it
 
-invoke `dotnet lambda invoke-function cit-dev-generate-thumbnail --payload &quot;Just Checking If Everything is OK&quot;`
+invoke `dotnet lambda invoke-function cit-dev-generate-thumbnail --region us-east-1 --payload &quot;Just Checking If Everything is OK&quot;`
 
+If uploading with zip set the handler name:
 in lambda basic settings set handler to value found in
 `aws-lambda-tools-defaults.json` file
 `function-handler` field
