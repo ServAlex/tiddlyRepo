@@ -10385,7 +10385,7 @@ system changed</pre>
 <div created="20200225101034960" modified="20200404123324289" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20200225095311065" modified="20200804120841056" title="$:/state/tab/sidebar--595412856">
+<div created="20200225095311065" modified="20200805085249843" title="$:/state/tab/sidebar--595412856">
 <pre>Operational notes</pre>
 </div>
 <div created="20200225145221819" modified="20200404115701891" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -10406,7 +10406,7 @@ system changed</pre>
 <div created="20200404182559886" modified="20200404182559886" title="$:/state/toc/artist-trader horne--1689640185">
 <pre>open</pre>
 </div>
-<div created="20200804072308736" list="" modified="20200804112656051" title="$:/StoryList">
+<div created="20200805085248993" list="[[aws lambda dotnet core]]" modified="20200805112640922" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -10807,7 +10807,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 [[dotnet core lambda|aws lambda dotnet core]]
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200731114533918" modified="20200805003625919" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
+<div created="20200731114533918" modified="20200805142750003" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
 <pre>&quot;&quot;&quot;
 https://docs.aws.amazon.com/lambda/latest/dg/lambda-csharp.html
 https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools
@@ -10825,10 +10825,8 @@ build for deployment to aws
 `dotnet lambda deploy-function cit-dev-generate-thumbnail --function-role cit-staging-lambda-generate-url --region us-east-1`
 generates .zip and uploads to aws, generated zip can be uploaded manually through interface
 if specified lamda doesn't exist yet, creates it
-`dotnet lambda deploy-function cit-dev-generate-video-thumbnail --function-role cit-staging-lambda-generate-url --region us-east-1`
 
-
-invoke `dotnet lambda invoke-function cit-dev-generate-thumbnail --region us-east-1 --payload &quot;Just Checking If Everything is OK&quot;`
+invoke 
 `dotnet lambda invoke-function cit-dev-generate-video-thumbnail --payload &quot;dev/thumbnail/SQ/cit/2020/7/24/9960d950-4b2f-472d-a6d4-bde3af962c7e.jpg&quot; --region us-east-1`
 
 If uploading with zip set the handler name:
@@ -10836,12 +10834,14 @@ in lambda basic settings set handler to value found in
 `aws-lambda-tools-defaults.json` file
 `function-handler` field
 
-
 Environment varuables: `System.Environment.GetEnvironmentVariables())`
 
 Examples:
 https://github.com/awsdocs/aws-lambda-developer-guide/tree/master/sample-apps/
 
+some deployment parameters can be moved to `aws-lambda-tools-defaults.json`
+
+deployment and launching can be transferred to tasks
 
 &quot;&quot;&quot;</pre>
 </div>
