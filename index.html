@@ -10416,7 +10416,7 @@ system changed</pre>
 <div created="20200404182559886" modified="20200404182559886" title="$:/state/toc/artist-trader horne--1689640185">
 <pre>open</pre>
 </div>
-<div created="20200817134820388" list="[[gleamTech videoUltimate]] [[aws lambda dotnet core thumbnail generation]] [[aws lambda dotnet core]]" modified="20200817134820388" title="$:/StoryList">
+<div created="20200817134820388" list="[[gleamTech videoUltimate]] [[aws lambda dotnet core thumbnail generation]] [[aws lambda dotnet core]]" modified="20200817153051662" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -10492,7 +10492,7 @@ system changed</pre>
 <div created="20200225101358894" modified="20200225101520614" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>saver</pre>
 </div>
-<div created="20200225124712943" modified="20200817135153904" title="$:/temp/search">
+<div created="20200225124712943" modified="20200817153011410" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200225115432661" modified="20200404115719553" title="$:/theme">
@@ -10817,12 +10817,16 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 [[dotnet core lambda|aws lambda dotnet core]]
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200731114533918" modified="20200817140238270" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
+<div created="20200731114533918" modified="20200817180327254" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
 <pre>&quot;&quot;&quot;
 https://docs.aws.amazon.com/lambda/latest/dg/lambda-csharp.html
 https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools
 https://aws.amazon.com/blogs/compute/announcing-aws-lambda-supports-for-net-core-3-1/
 https://docs.aws.amazon.com/lambda/latest/dg/csharp-package-cli.html
+https://github.com/awsdocs/aws-lambda-developer-guide/blob/master/sample-apps/blank-csharp/src/blank-csharp/Function.cs
+https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/net-dg-config-creds.html
+https://aws.amazon.com/blogs/compute/announcing-aws-lambda-supports-for-net-core-3-1/
+
 
 `dotnet tool install -g Amazon.ElasticBeanstalk.Tools`
 `dotnet new -i Amazon.Lambda.Templates`
@@ -10856,12 +10860,13 @@ deployment and launching can be transferred to tasks
 
 [[aws lambda dotnet core thumbnail generation]]
 
+https://github.com/aws/aws-lambda-dotnet
 https://github.com/aws/aws-extensions-for-dotnet-cli/issues/54
 https://github.com/aws/aws-extensions-for-dotnet-cli/blob/master/src/Amazon.Lambda.Tools/LambdaDotNetCLIWrapper.cs#L327
 
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200817134834785" modified="20200817135151322" tags="lambda aws [[.net core]]" title="aws lambda dotnet core thumbnail generation">
+<div created="20200817134834785" modified="20200817175405365" tags="lambda aws [[.net core]]" title="aws lambda dotnet core thumbnail generation">
 <pre>&quot;&quot;&quot;
 
 get a frame from video dotnet core lambda
@@ -10878,7 +10883,19 @@ https://github.com/radek-k/FFMediaToolkit
 dotnet core lambda ffmpeg
 
 https://intoli.com/blog/transcoding-on-aws-lambda/
-https://medium.com/dev-genius/how-to-process-media-in-aws-lambda-ffmpeg-f53491cf8768 // python
+https://medium.com/dev-genius/how-to-process-media-in-aws-lambda-ffmpeg-f53491cf8768 / python
+
+aws-lambda-tools-defaults.json additional-files
+https://gitter.im/aws/aws-lambda-dotnet?at=588913e6519afee26bb0919b
+https://github.com/aws/aws-extensions-for-dotnet-cli/issues/54
+
+https://github.com/aws/aws-extensions-for-dotnet-cli/blob/master/src/Amazon.Lambda.Tools/LambdaDotNetCLIWrapper.cs#L327
+
+
+self contained:
+dotnet lambda --self-contained
+https://stackoverflow.com/questions/59290414/cannot-deploy-a-self-contained-net-core-3-0-application-to-aws-lambda
+dotnet lambda build with system libraries included
 
 &quot;&quot;&quot;</pre>
 </div>
@@ -11607,7 +11624,7 @@ detached head
 `git merge temp`
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200817135246836" modified="20200817135905362" tags="video [[.net core]]" title="gleamTech videoUltimate">
+<div created="20200817135246836" modified="20200817180044820" tags="video [[.net core]]" title="gleamTech videoUltimate">
 <pre>&quot;&quot;&quot;
 .net library for working with video
 https://www.nuget.org/packages/GleamTech.VideoUltimate/
@@ -11630,7 +11647,19 @@ https://archive.codeplex.com/?p=videoultimate
 https://medium.com/@tonerdo/referencing-a-net-dll-directly-using-the-net-core-toolchain-16f0af46a4dc
 
 GleamTech.VideoUltimate avformat
+dotnet core reference avformat
 
+GleamTech.VideoUltimate dll dependencies
+https://stackoverflow.com/questions/41235714/im-building-a-c-sharp-aws-lambda-package-how-do-i-properly-include-system-data
+
+avformat:
+The type initializer for 'GleamTech.VideoUltimate.VideoFrameReader' threw an exception.
+Unable to load DLL 'avformat.58': The specified module could not be found.
+https://github.com/pytorch/vision/issues/1877
+https://forums.aws.amazon.com/thread.jspa?messageID=761380
+
+
+https://github.com/Ruslan-B/FFmpeg.AutoGen/issues/103
 
 &quot;&quot;&quot;</pre>
 </div>
