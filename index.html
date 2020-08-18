@@ -10397,7 +10397,7 @@ system changed</pre>
 <div created="20200225101034960" modified="20200404123324289" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20200225095311065" modified="20200805085249843" title="$:/state/tab/sidebar--595412856">
+<div created="20200225095311065" modified="20200818101911948" title="$:/state/tab/sidebar--595412856">
 <pre>Operational notes</pre>
 </div>
 <div created="20200225145221819" modified="20200404115701891" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -10418,7 +10418,7 @@ system changed</pre>
 <div created="20200404182559886" modified="20200404182559886" title="$:/state/toc/artist-trader horne--1689640185">
 <pre>open</pre>
 </div>
-<div list="typescript" title="$:/StoryList">
+<div created="20200818101239561" list="" modified="20200818101910819" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -10494,7 +10494,7 @@ system changed</pre>
 <div created="20200225101358894" modified="20200225101520614" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>saver</pre>
 </div>
-<div created="20200225124712943" modified="20200818084822951" title="$:/temp/search">
+<div created="20200225124712943" modified="20200818101632935" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200225115432661" modified="20200404115719553" title="$:/theme">
@@ -10804,9 +10804,10 @@ https://aws.amazon.com/premiumsupport/knowledge-center/api-gateway-cloudwatch-lo
 <div created="20200225181339141" modified="20200225181401808" tags="etl aws amazon" title="aws glue">
 <pre></pre>
 </div>
-<div created="20200429090639353" modified="20200731134409067" tags="aws" title="aws lambda">
+<div created="20200429090639353" modified="20200818101929895" tags="lambda aws" title="aws lambda">
 <pre>&quot;&quot;&quot;
 https://github.com/aws-samples/serverless-app-examples/tree/master/javascript
+https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html
 
 [[step through debugging|https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-debugging.html]]
 [[nodejs|https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-debugging-nodejs.html]]
@@ -10816,10 +10817,12 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
 [[install aws sam|https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-windows.html]]
 
+deployment troubleshooting https://docs.aws.amazon.com/lambda/latest/dg/troubleshooting-deployment.html
+
 [[dotnet core lambda|aws lambda dotnet core]]
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200731114533918" modified="20200817180327254" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
+<div created="20200731114533918" modified="20200818101852784" tags="[[.net core]] lambda aws" title="aws lambda dotnet core">
 <pre>&quot;&quot;&quot;
 https://docs.aws.amazon.com/lambda/latest/dg/lambda-csharp.html
 https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools
@@ -10827,8 +10830,8 @@ https://aws.amazon.com/blogs/compute/announcing-aws-lambda-supports-for-net-core
 https://docs.aws.amazon.com/lambda/latest/dg/csharp-package-cli.html
 https://github.com/awsdocs/aws-lambda-developer-guide/blob/master/sample-apps/blank-csharp/src/blank-csharp/Function.cs
 https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/net-dg-config-creds.html
-https://aws.amazon.com/blogs/compute/announcing-aws-lambda-supports-for-net-core-3-1/
-
+https://medium.com/devtechblogs/https-medium-com-lior-k-sh-five-features-csharp-dotnet-core-aws-lambda-function-9b2d1a3d681b
+https://aws.amazon.com/blogs/developer/deploying-net-core-aws-lambda-functions-from-the-command-line/
 
 `dotnet tool install -g Amazon.ElasticBeanstalk.Tools`
 `dotnet new -i Amazon.Lambda.Templates`
@@ -10865,6 +10868,9 @@ deployment and launching can be transferred to tasks
 https://github.com/aws/aws-lambda-dotnet
 https://github.com/aws/aws-extensions-for-dotnet-cli/issues/54
 https://github.com/aws/aws-extensions-for-dotnet-cli/blob/master/src/Amazon.Lambda.Tools/LambdaDotNetCLIWrapper.cs#L327
+exceptions https://docs.aws.amazon.com/lambda/latest/dg/csharp-exceptions.html
+
+Error updating code for Lambda function: The operation was canceled.
 
 &quot;&quot;&quot;</pre>
 </div>
@@ -12753,10 +12759,14 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor
 
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200511072710768" modified="20200511073510338" tags="setup vscode" title="vscode remote development setup in container">
+<div created="20200511072710768" modified="20200818101631579" tags="setup vscode" title="vscode remote development setup in container">
 <pre>&quot;&quot;&quot;
 https://code.visualstudio.com/remote-tutorials/containers/getting-started
 https://code.visualstudio.com/docs/remote/containers
+
+https://code.visualstudio.com/blogs/2020/07/27/containers-edu
+https://code.visualstudio.com/docs/remote/devcontainerjson-reference
+
 &quot;&quot;&quot;</pre>
 </div>
 <div created="20200405000424052" modified="20200405000710393" tags="vscode setup ide" title="vscode setup">
