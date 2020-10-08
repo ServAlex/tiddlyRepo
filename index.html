@@ -10459,7 +10459,7 @@ system changed</pre>
 <div created="20200225101034960" modified="20200404123324289" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20200225095311065" modified="20201007234538390" title="$:/state/tab/sidebar--595412856">
+<div created="20200225095311065" modified="20201008055840206" title="$:/state/tab/sidebar--595412856">
 <pre>Operational notes</pre>
 </div>
 <div created="20200225145221819" modified="20200404115701891" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -10480,7 +10480,7 @@ system changed</pre>
 <div created="20200404182559886" modified="20200404182559886" title="$:/state/toc/artist-trader horne--1689640185">
 <pre>open</pre>
 </div>
-<div list="" title="$:/StoryList">
+<div created="20201008055800474" list="" modified="20201008055800474" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -11309,7 +11309,7 @@ https://www.youtube.com/watch?v=AdvEacEJ_qk
 Hello Piotr. I have a lot of ground ballscrews. From Steinmeyer, Rexroth, NSK, Hiwin, Umbra... All brand names. no Chinese stuff.  Most of them are big, 40mm diameter and more, but I do have some 32mm and so on. I also have INA ZARF special ballscrew bearings, and 35mm and 45mm rails, carriges, all roller carriges from Rexroth, INA and Hiwin. So if you need ballscrews or more rails and carriges, you can get in touch with me. About ballscrews accuracy, usually C5 is just fine, specially taking into account your frame. If you want to achieve  very good positioning accuracy, you need to map your ballscrews. I don't know which software you will use, but I saw you have UC300ETH controller. This one can be used with Mach3/4 or UCCNC. UCCNC doesn't have ballscrew mapping option, so I would avoid it for your application.  Anyway, my point is, don't throw away money for C3 screws, go with ground C5 with some medium preload, buy linear scale, and map each of your axis with it. Best option to map your ballscrew is by using laser CMM, those are accurate down to nanometer, but are expensive, like 20 000eur  + . Linear scale + DRO for it will set you back about 250eur or so. You can check company Sino - those are well know Chinese, good quality and great price. Even better option would be, to chose ethernet smoothstepper instead of UC300ETH. Smoothstepper already has encoder inputs. So you could wire up linear encoder and map position without sepperate DRO. Even better, with smoothstepper you can connect 4 linear scales for your 4 axes, and monitor position at about 500hz rate, then  update position from linear scales. This way you can compensate for temperature changes etc. Sadly smoothstepper won't allow for active PID loop from encoders. PID loop from linear scales is optimal solution. If you want to go this way, and are willing to spend a bit more  for motion controller, take a look at vitalsystems  DSPMC 8 axis controller. This one will let you connect linear scales in a full closed loop sistem. It's a beast, worth every penny. LinuxCNC with mesa cards is also option to go full closed loop. Another thing super important for accuracy: homing. This is specially true for dual motor gantry desing, where homing not only determines accuracy of your work offset. but also how square your gantry is. You have to do it with encoder index signals, as proximity sensors are nowhere near accurate enought. I don't know about your servo motors, but I always use servo motors with absolute encoder. On power on, I read encoder positions from servo drive over modbus, and update controller DROs. For gantry squaring, I predetermine difference of one motor to another, and after reading both encoder positions, I move slave axis motor as much as needed, to make gantry square. Than I switch back to master slave configuration. This can all be done very easy in Mach4 with lua scripts
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20201005090824098" modified="20201005102757591" tags="" title="cnc vfd setup">
+<div created="20201005090824098" modified="20201008055838519" tags="" title="cnc vfd setup">
 <pre>&quot;&quot;&quot;
 hy02d223b
 
@@ -11325,6 +11325,9 @@ https://www.youtube.com/watch?v=NocbE04gN1Y
 
 another setup, not as good
 https://www.youtube.com/watch?v=DEt3l4IT2Vs
+
+one more
+https://www.youtube.com/watch?v=1sf2zLQu5CU
 
 &quot;&quot;&quot;</pre>
 </div>
