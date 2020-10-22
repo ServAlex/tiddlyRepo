@@ -497,6 +497,10 @@ Error message and password prompt
 
 <li>diagnostic tools problem</li>
 
+<li>docker</li>
+
+<li>docker installation</li>
+
 <li>docker tutorials and docs</li>
 
 <li>dotnet + docker</li>
@@ -10473,7 +10477,7 @@ system changed</pre>
 <div created="20200225101034960" modified="20200404123324289" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20200225095311065" modified="20201021093905169" title="$:/state/tab/sidebar--595412856">
+<div created="20200225095311065" modified="20201022091505308" title="$:/state/tab/sidebar--595412856">
 <pre>Operational notes</pre>
 </div>
 <div created="20200225145221819" modified="20200404115701891" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -10494,7 +10498,7 @@ system changed</pre>
 <div created="20200404182559886" modified="20200404182559886" title="$:/state/toc/artist-trader horne--1689640185">
 <pre>open</pre>
 </div>
-<div created="20201021093743623" list="" modified="20201021093743623" title="$:/StoryList">
+<div created="20201022081645679" list="[[docker installation]] docker" modified="20201022081655734" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -10554,11 +10558,11 @@ system changed</pre>
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;393&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;851&quot;
+            &quot;text&quot;: &quot;1200&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -10570,7 +10574,7 @@ system changed</pre>
 <div created="20200225101358894" modified="20200225101520614" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>saver</pre>
 </div>
-<div created="20200225124712943" modified="20201020194044664" title="$:/temp/search">
+<div created="20200225124712943" modified="20201022091457238" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200225115432661" modified="20200404115719553" title="$:/theme">
@@ -11505,11 +11509,48 @@ https://developercommunity.visualstudio.com/content/problem/701470/vs-2019-diago
 
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200511073313790" modified="20200511073431923" tags="howto tutorial dock docker" title="docker tutorials and docs">
+<div created="20201022082116653" modified="20201022091447876" tags="containerization" title="docker">
+<pre>&quot;&quot;&quot;
+dockerfile - recipe, environment definition
+image - packaged content, snapshot
+container - instance 
+
+`docker pull leImage`
+`docker pull leImage:leTag` - specific version
+`docker run -d -t --name leContainer leImage`
+`docker run -d -t -p 81:80 --name leContainer leImage` - map 81 host port to container 80
+`docker ps`
+`docker exec -it leContainer bash` - access bash inside the container, shell is listed in `ps`
+`docker stop leImage`
+
+
+extra themes aspects to research:
+control groups, name spaces
+
+[[docker installation]]
+related: [[kubernetes]], [[docker swarm]]
+&quot;&quot;&quot;</pre>
+</div>
+<div created="20201022085031367" modified="20201022085118706" tags="setup docker" title="docker installation">
+<pre>&quot;&quot;&quot;
+after install
+on arch
+`systemctl start docker` or `systemctl enable docker`
+`sudo chmod 666 /var/run/docker.sock`
+
+install docker extension in vscode
+
+&quot;&quot;&quot;</pre>
+</div>
+<div created="20200511073313790" modified="20201022081826655" tags="howto tutorial dock docker" title="docker tutorials and docs">
 <pre>&quot;&quot;&quot;
 https://github.com/docker/labs/blob/master/beginner/chapters/setup.md
 https://docs.docker.com/samples/
 https://docs.docker.com/docker-for-windows/
+
+https://www.youtube.com/watch?v=eGz9DS-aIeY
+https://www.youtube.com/watch?v=gAkwW2tuIqE
+
 &quot;&quot;&quot;</pre>
 </div>
 <div created="20200227150258837" modified="20200227150415495" tags="c# [[.net core]] .net docker containerization" title="dotnet + docker">
