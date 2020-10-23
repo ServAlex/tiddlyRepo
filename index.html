@@ -437,6 +437,8 @@ Error message and password prompt
 
 <li>blazor mobile</li>
 
+<li>building images</li>
+
 <li>c#</li>
 
 <li>c# delegates</li>
@@ -10477,7 +10479,7 @@ system changed</pre>
 <div created="20200225101034960" modified="20200404123324289" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20200225095311065" modified="20201022091505308" title="$:/state/tab/sidebar--595412856">
+<div created="20200225095311065" modified="20201023134050645" title="$:/state/tab/sidebar--595412856">
 <pre>Operational notes</pre>
 </div>
 <div created="20200225145221819" modified="20200404115701891" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -10498,7 +10500,7 @@ system changed</pre>
 <div created="20200404182559886" modified="20200404182559886" title="$:/state/toc/artist-trader horne--1689640185">
 <pre>open</pre>
 </div>
-<div created="20201022081645679" list="[[docker installation]] docker" modified="20201022081655734" title="$:/StoryList">
+<div created="20201023133339699" list="" modified="20201023134849908" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -11116,6 +11118,26 @@ https://www.youtube.com/watch?v=xhk9GNRuUoQ
 
 &quot;&quot;&quot;</pre>
 </div>
+<div created="20201023134857479" modified="20201023150535290" tags="containerization docker" title="building images">
+<pre>&quot;&quot;&quot;
+create a `Dockerfile` and `.dockerignore`
+
+`docker build -t imageName .`  
+imageName is recomended to follow the pattern: [user name on docker hub]/[app name]:[version]
+. is the path to Dockerfile
+
+`docker push` - push built image to container registry
+
+good practice - one process per container
+
+`docker compose` - tool for running multiple docker containers at the same time
+`docker-compose.yml`
+
+`docker-compose up` will find .yml file and start all the defined containers with specified parameters
+`docker-compose down` will will stop all the containers
+
+&quot;&quot;&quot;</pre>
+</div>
 <div created="20200225234642481" modified="20200225234658911" tags="[[.net core]] .net c#" title="c#">
 <pre>https://medium.com/swlh/an-introduction-to-c-8-874018d59251</pre>
 </div>
@@ -11509,11 +11531,11 @@ https://developercommunity.visualstudio.com/content/problem/701470/vs-2019-diago
 
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20201022082116653" modified="20201022091447876" tags="containerization" title="docker">
+<div created="20201022082116653" modified="20201023140442085" tags="containerization" title="docker">
 <pre>&quot;&quot;&quot;
 dockerfile - recipe, environment definition
 image - packaged content, snapshot
-container - instance 
+container - instance
 
 `docker pull leImage`
 `docker pull leImage:leTag` - specific version
@@ -11523,11 +11545,17 @@ container - instance
 `docker exec -it leContainer bash` - access bash inside the container, shell is listed in `ps`
 `docker stop leImage`
 
+''docker volume'' - dedicated directory on the host machine where files may be saved and shared between containers
+`docker volume create shared-sturff`
+`docker run --mount source=shared-stuff,target=/stuff`
+
+
+[[docker installation]]
+[[building images]]
 
 extra themes aspects to research:
 control groups, name spaces
 
-[[docker installation]]
 related: [[kubernetes]], [[docker swarm]]
 &quot;&quot;&quot;</pre>
 </div>
