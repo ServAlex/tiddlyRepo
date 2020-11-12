@@ -275,7 +275,11 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/editpreviewtype</li>
+
 <li>$:/state/folded/cnc mill project</li>
+
+<li>$:/state/showeditpreview</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
 
@@ -472,6 +476,8 @@ Error message and password prompt
 <li>dotnet + docker</li>
 
 <li>dotnet core web api</li>
+
+<li>dotnet pipelines</li>
 
 <li>dotnet s3</li>
 
@@ -10963,8 +10969,14 @@ system changed</pre>
 <div created="20200225094955966" modified="20200225121400471" title="$:/SiteTitle">
 <pre>Server Tiddly</pre>
 </div>
+<div created="20201112123014050" modified="20201112123019866" title="$:/state/editpreviewtype">
+<pre>$:/core/ui/EditTemplate/body/preview/output</pre>
+</div>
 <div created="20201029114243803" modified="20201029115011042" title="$:/state/folded/cnc mill project">
 <pre>show</pre>
+</div>
+<div created="20201112123040568" modified="20201112123040568" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20201029102430775" modified="20201109145538700" title="$:/state/tab/sidebar--595412856">
 <pre>Operational notes</pre>
@@ -10972,7 +10984,7 @@ system changed</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201111025654977" list="" modified="20201111025654977" title="$:/StoryList">
+<div created="20201112123021808" list="" modified="20201112123021808" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -11045,7 +11057,7 @@ system changed</pre>
     }
 }</pre>
 </div>
-<div created="20201029102504703" modified="20201109145750062" title="$:/temp/search">
+<div created="20201029102504703" modified="20201112122529963" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200225115432661" modified="20200404115719553" title="$:/theme">
@@ -12153,6 +12165,76 @@ https://medium.com/@hakant/api-versioning-with-swagger-azure-api-manager-and-asp
 https://www.youtube.com/playlist?list=PLUOequmGnXxOgmSDWU7Tl6iQTsOtyjtwU
 [[dotnet core async api best practices|https://www.youtube.com/watch?v=_T3kvAxAPpQ]]
 &quot;&quot;&quot;</pre>
+</div>
+<div created="20201112122532239" modified="20201112133811373" tags=".net [[c sharp]] c# [[.net core]]" title="dotnet pipelines">
+<pre>&quot;&quot;&quot;
+library for high performance IO
+https://www.nuget.org/packages/System.IO.Pipelines/
+https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/
+
+&quot;&quot;&quot;
+`var pipe = new Pipe();
+var writer = pipe.Writer
+var reader = pipe.Reader
+`
+
+!Writing
+
+`Memory&lt;byte&gt; memory = writer.GetMemory(minimumBufferSize);`
+get memory to write to
+
+`write to memory`
+
+`writer.Advance(bytesWritten)`
+tell how much we wrote
+
+`write more`
+
+`FlushResult result = await writer.FlushAsync()`
+make the data available to the PipeReader
+
+`result.IsCompleted`
+check if pipe closed from another end
+
+`writer.Complete()`
+&quot;close&quot; writer
+
+!Reading
+
+`ReadResult result = await reader.ReadAsync()
+ReadOnlySequence&lt;byte&gt; buffer = result.Buffer`
+
+`buffer.Slice(0, position)`
+read from 0 to position
+
+`buffer = buffer.Slice(buffer.GetPosition(1, position))`
+cut the buffer up to posiotn+1
+
+`reader.AdvanceTo(buffer.Start, buffer.End)`
+tell how much of the buffer we have consumed
+
+`result.IsCompleted`
+stop reading if there's no more data coming (we got to the end)
+
+
+`reader.Complete()`
+mark pipe as complete
+
+!Data structures:
+&quot;&quot;&quot;
+`ReadOnlySequence&lt;T&gt;` - linked list of buffers, view over 1+ segment of `ReadOnlyMemory&lt;T&gt;`
+`ReadOnlyMemory&lt;T&gt;`
+`Span&lt;T&gt;` - view over arrays?
+`Memory&lt;T&gt;` - view over strings?
+&quot;&quot;&quot;
+
+!Back pressure and flow control
+&quot;&quot;&quot;
+`PauseWriterThreshold`, `ResumeWriterThreshold`
+allows to mitigate overproduction by writer:
+`writer.FlushAsync` will wait untill buffer is shrunk below `ResumeWriterThreshold`
+&quot;&quot;&quot;
+</pre>
 </div>
 <div created="20200819135718958" modified="20200819135756680" tags="aws [[.net core]]" title="dotnet s3">
 <pre>&quot;&quot;&quot;
