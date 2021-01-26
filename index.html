@@ -1199,6 +1199,8 @@ Error message and password prompt
 
 <li>visual studio diagnostic tools, intelitrace, profiling</li>
 
+<li>visual studio doesn't load projects when using local IIS</li>
+
 <li>vive controller touchpad fix</li>
 
 <li>vive wireless adapter overheat</li>
@@ -16318,6 +16320,20 @@ https://www.youtube.com/watch?v=0sEgkZ27gtY
 https://www.youtube.com/watch?v=LhhGqNAGQHU
 
 [[diagnostic tools problem]]
+&quot;&quot;&quot;</pre>
+</div>
+<div created="20210126165752750" modified="20210126171811231" tags="[[problem and solution]]" title="visual studio doesn't load projects when using local IIS">
+<pre>&quot;&quot;&quot;
+problem: some projects failed to load
+error sais 
+`The Web Application Project MobileApi is configured to use IIS.  The Web server 'http://url' could not be found.`
+
+issue: site and virtual directory in iis can not be created
+
+solution:
+1) create new site in iis with `url` and point phisical path to project directory
+2) reload project
+
 &quot;&quot;&quot;</pre>
 </div>
 <div created="20201011210533990" modified="20201011210605194" tags="diy [[problem and solution]]" title="vive controller touchpad fix">
