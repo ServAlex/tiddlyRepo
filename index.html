@@ -1073,6 +1073,8 @@ Error message and password prompt
 
 <li>morphing decoration</li>
 
+<li>mount umount tips</li>
+
 <li>movies to check out</li>
 
 <li>mpv</li>
@@ -11831,8 +11833,8 @@ system changed</pre>
 <div created="20201209113448055" modified="20201209120825407" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Settings</pre>
 </div>
-<div created="20201029102430775" modified="20210314111501169" title="$:/state/tab/sidebar--595412856">
-<pre>Operational notes</pre>
+<div created="20201029102430775" modified="20210314143956318" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20210211133027489" modified="20210211133028904" title="$:/state/toc/artist-trader horne--1689640185">
 <pre>close</pre>
@@ -11843,7 +11845,7 @@ system changed</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210314074636326" list="" modified="20210314110303360" title="$:/StoryList">
+<div created="20210314074636326" list="[[banana pi]]" modified="20210314143959486" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -12869,7 +12871,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201209113514219" modified="20201209113519128" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20201029102504703" modified="20210314105350970" title="$:/temp/search">
+<div created="20201029102504703" modified="20210314143421025" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20201209113510735" modified="20201209113510735" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
@@ -13604,7 +13606,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210314103850399" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210314142413597" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13643,7 +13645,20 @@ pacman -Syu
 everything updated successfully time to add packages and users
 deluge https://dev.deluge-torrent.org/wiki/UserGuide/ThinClient
 
-iotop, htop, atop
+install sudo
+`pacman -S sudo`
+create user
+`useradd -m userName` (could add parameter to add it to wheel)
+set users password
+`passwd alex	`
+uncoment wheel group using
+`visudo`
+add user to wheel group
+`gpasswd -a userName wheel`
+
+iotop, htop, atop (https://habr.com/ru/post/140010/)
+lm_sensors, lsof - for monitoring
+	
 
 
 
@@ -16085,6 +16100,16 @@ https://www.youtube.com/watch?v=-56x56UppqQ
 </div>
 <div created="20200312085425198" modified="20200312085503916" tags="diy decoration liquid" title="morphing decoration">
 <pre>https://9gag.com/gag/ax7KBNY</pre>
+</div>
+<div created="20210314143422932" modified="20210314143602463" tags="[[command line]] linux tips howto" title="mount umount tips">
+<pre>&quot;&quot;&quot;
+`lsof | grep 'mountLocation'` - list processes that occupy mounted device
+
+force unmount
+`umount -l /PATH/OF/BUSY-DEVICE`
+`umount -f /PATH/OF/BUSY-NFS (NETWORK-FILE-SYSTEM)`
+
+&quot;&quot;&quot;</pre>
 </div>
 <div created="20200225171113090" modified="20210304091633435" tags="movies list" title="movies to check out">
 <pre>&quot;&quot;&quot;
