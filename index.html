@@ -13604,7 +13604,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210314094322246" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210314095520795" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13623,6 +13623,7 @@ sudo pacman -Syu
 
 ''success''
 arch wiki https://wiki.archlinux.org/index.php/Banana_Pi 
+uses [[u-boot|https://linux-sunxi.org/U-Boot#Booting_with_boot.cmd]]
 gone through creation, it works
 to create patition
 &quot;Run the ''sudo fdisk /dev/sdx'' command. Use the ''o'' command to delete all partition of MicroSD card and use the ''n'' command to add one new partition. Use the ''w'' command to save change&quot;
@@ -13636,6 +13637,10 @@ pacman -S archlinuxarm-keyring ''#'' may fail, try to continue
 pacman-key --populate archlinuxarm
 pacman-key --populate ''#'' if previous didn't work
 pacman -Syu
+
+==&gt; WARNING: No modules were added to the image. This is probably not what you want.
+
+everything updated successfully time to add packages and users
 
 
 boards
