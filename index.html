@@ -13625,7 +13625,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210316202542849" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210320081620716" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13688,6 +13688,15 @@ install ntfs-3g
 edit fstab to mount by default
 add systemd specific fstab option [[x-systemd.automount|https://wiki.archlinux.org/index.php/fstab#Automount_with_systemd]] to lazily mount on boot
 enable smb.service and nmb.service
+
+
+
+''formatting drive''
+deleted all
+formatted to ext4
+`mkfs.ext4 -b 4096 -M 0 -L Media /dev/sdXX`
+tuning
+`tune2fs -O has_journal,extent,huge_file,flex_bg,uninit_bg,dir_nlink,dir_index /dev/vg/media`
 
 
 
