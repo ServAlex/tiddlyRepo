@@ -11847,7 +11847,7 @@ system changed</pre>
 <div created="20201209113448055" modified="20201209120825407" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Settings</pre>
 </div>
-<div created="20201029102430775" modified="20210320081731293" title="$:/state/tab/sidebar--595412856">
+<div created="20201029102430775" modified="20210320233025805" title="$:/state/tab/sidebar--595412856">
 <pre>Operational notes</pre>
 </div>
 <div created="20210211133027489" modified="20210211133028904" title="$:/state/toc/artist-trader horne--1689640185">
@@ -11859,7 +11859,7 @@ system changed</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210320074959929" list="[[banana pi]]" modified="20210320232714904" title="$:/StoryList">
+<div created="20210320074959929" list="[[banana pi]]" modified="20210320233017272" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -13627,7 +13627,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210320231017969" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210320235858768" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13692,7 +13692,6 @@ add systemd specific fstab option [[x-systemd.automount|https://wiki.archlinux.o
 enable smb.service and nmb.service
 
 
-
 ''formatting drive'' ([[working with filesystems]])
 deleted all
 formatted to ext4
@@ -13703,14 +13702,20 @@ mount options suggested
 `/dev/vg/media  /media  ext4    defaults,user,barrier=0,commit=60,noatime,data=writeback,journal_async_commit   0   0`
 leaving out `barrier=0` and `data=writeback` as they increase data loss chance on crash
 `/dev/vg/media  /media  ext4    defaults,user,commit=60,noatime,journal_async_commit   0   0`
+`mount -avf` fake mount for testing
 
 
 ''copying data''
 `sudo rsync --partial-dir=destination/rsyncTemp/ -r --info=progress2 source/code/ destination/code/`
 
-''setup transmission''
+''setup transmission'' [[wiki|https://wiki.archlinux.org/index.php/transmission]]
 install transmission-cli
-
+`sudo systemctl enable transmission`
+edit config:
+`sudo systemctl stop transmission`
+`sudo vim ~/.config/transmission-daemon/settings.json`
+add whitelist
+`sudo systemctl start transmission`
 
 boards
 https://wiki.banana-pi.org/Main_Page#Banana_Pi_single_board_computer_:_Banana_Pi_Series_Comparison
@@ -17067,10 +17072,11 @@ https://www.aliexpress.com/item/4000393264115.html
 
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210320232934232" modified="20210320233007599" tags="diy lapping [[surface plate]]" title="surface plate lapping">
+<div created="20210320232934232" modified="20210320233023399" tags="diy lapping [[surface plate]]" title="surface plate lapping">
 <pre>&quot;&quot;&quot;
 
 https://www.youtube.com/watch?v=6nY7uW1uG9s
+https://www.youtube.com/watch?v=k82T0T_4UHg
 
 &quot;&quot;&quot;</pre>
 </div>
