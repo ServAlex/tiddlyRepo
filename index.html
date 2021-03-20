@@ -13625,7 +13625,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210320092837165" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210320095938108" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13684,7 +13684,7 @@ create smb.conf in `/etc/samba/`
 populate it with [[example|https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD]]
 edit
 create directory in /run/media
-install ntfs-3g
+install ntfs-3g, not needed as ext4 is used
 edit fstab to mount by default
 add systemd specific fstab option [[x-systemd.automount|https://wiki.archlinux.org/index.php/fstab#Automount_with_systemd]] to lazily mount on boot
 enable smb.service and nmb.service
@@ -13704,7 +13704,7 @@ leaving out `barrier=0` and `data=writeback` as they increase data loss chance o
 
 
 ''copying data''
-`rsync --partial-dir=rsyncTemp/ -r --info=progress2 ../source/backups/ destination/backups/`
+`sudo rsync --partial-dir=destination/rsyncTemp/ -r --info=progress2 source/code/ destination/code/`
 
 boards
 https://wiki.banana-pi.org/Main_Page#Banana_Pi_single_board_computer_:_Banana_Pi_Series_Comparison
