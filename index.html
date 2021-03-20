@@ -13625,7 +13625,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210320082609488" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210320092837165" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13702,6 +13702,9 @@ mount options suggested
 leaving out `barrier=0` and `data=writeback` as they increase data loss chance on crash
 `/dev/vg/media  /media  ext4    defaults,user,commit=60,noatime,journal_async_commit   0   0`
 
+
+''copying data''
+`rsync --partial-dir=rsyncTemp/ -r --info=progress2 ../source/backups/ destination/backups/`
 
 boards
 https://wiki.banana-pi.org/Main_Page#Banana_Pi_single_board_computer_:_Banana_Pi_Series_Comparison
