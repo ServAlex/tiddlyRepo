@@ -13625,7 +13625,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210320081729619" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210320082609488" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13697,7 +13697,10 @@ formatted to ext4
 `mkfs.ext4 -b 4096 -M 0 -L Media /dev/sdXX`
 tuning
 `tune2fs -O has_journal,extent,huge_file,flex_bg,uninit_bg,dir_nlink,dir_index /dev/vg/media`
-
+mount options suggested
+`/dev/vg/media  /media  ext4    defaults,user,barrier=0,commit=60,noatime,data=writeback,journal_async_commit   0   0`
+leaving out `barrier=0` and `data=writeback` as they increase data loss chance on crash
+`/dev/vg/media  /media  ext4    defaults,user,commit=60,noatime,journal_async_commit   0   0`
 
 
 boards
