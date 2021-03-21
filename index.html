@@ -11859,7 +11859,7 @@ system changed</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210320074959929" list="[[banana pi]]" modified="20210320233017272" title="$:/StoryList">
+<div created="20210320074959929" list="" modified="20210320233017272" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200225150908953" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/core/ui/EditorToolbar/more" modified="20200225150908953" title="$:/tags/EditorToolbar">
@@ -13627,22 +13627,15 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210321010025647" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210321010803529" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
 http://www.lemaker.org/product-bananapi-resource.html
 
-''fail''
+''fail'' - failed to update
 flashed sdcard with arch using http://wiki.lemaker.org/BananaPro/Pi:Quick_Start guide
-default SSH login :	bananapi/bananapi
 
-log
-sudo rm /etc/ssl/certs/ca-certificates.crt
-sudo pacman -S --force gnupg
-sudo pacman -Syu
-
----- failed to update
 
 ''success''
 arch wiki https://wiki.archlinux.org/index.php/Banana_Pi 
@@ -13664,7 +13657,6 @@ pacman -Syu
 ==&gt; WARNING: No modules were added to the image. This is probably not what you want.
 
 everything updated successfully time to add packages and users
-deluge https://dev.deluge-torrent.org/wiki/UserGuide/ThinClient
 
 install sudo
 `pacman -S sudo`
@@ -13685,10 +13677,12 @@ sudo pacman -S samba vim wget
 create smb.conf in `/etc/samba/`
 populate it with [[example|https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD]]
 edit
-create directory in /run/media
+create directory in /
 install ntfs-3g, not needed as ext4 is used
 edit fstab to mount by default
 add systemd specific fstab option [[x-systemd.automount|https://wiki.archlinux.org/index.php/fstab#Automount_with_systemd]] to lazily mount on boot
+in the end working version:
+`UUID= /nas/publicNas ext4 defaults,commit=60,user,exec,noatime,nofail   0   0`
 enable smb.service and nmb.service
 
 
@@ -13714,7 +13708,7 @@ install transmission-cli
 edit config:
 `sudo systemctl stop transmission` 
 `sudo vim ~/.config/transmission-daemon/settings.json`
-add whitelist
+add whitelist and host whitelist
 `sudo systemctl start transmission`
 or `kill -s SIGHUP $(pidof transmission-daemon)` to reaload settings without stopping
 
@@ -13724,7 +13718,10 @@ probably connect using ip instead of a host name.
 create a group for publicNas
 sudo groupadd somegroup
 sudo usermod -aG somegroup someuser
+set publicNas ownership to that group, don't give 777 to that directory
 
+
+deluge https://dev.deluge-torrent.org/wiki/UserGuide/ThinClient
 
 
 
