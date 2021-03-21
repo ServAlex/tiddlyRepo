@@ -13627,7 +13627,7 @@ https://www.youtube.com/watch?v=opwr404okjo&amp;list=RDaUo29syoNKI&amp;index=33
 http://www.gizmology.net/bearings.htm
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20210313085650907" modified="20210320235858768" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
+<div created="20210313085650907" modified="20210321010025647" tags="sbc [[raspberry pi]] device [[device setup]]" title="banana pi">
 <pre>&quot;&quot;&quot;
 bananapi is a single board computer
 
@@ -13712,10 +13712,21 @@ leaving out `barrier=0` and `data=writeback` as they increase data loss chance o
 install transmission-cli
 `sudo systemctl enable transmission`
 edit config:
-`sudo systemctl stop transmission`
+`sudo systemctl stop transmission` 
 `sudo vim ~/.config/transmission-daemon/settings.json`
 add whitelist
 `sudo systemctl start transmission`
+or `kill -s SIGHUP $(pidof transmission-daemon)` to reaload settings without stopping
+
+probably connect using ip instead of a host name.
+
+''managing permissions''
+create a group for publicNas
+sudo groupadd somegroup
+sudo usermod -aG somegroup someuser
+
+
+
 
 boards
 https://wiki.banana-pi.org/Main_Page#Banana_Pi_single_board_computer_:_Banana_Pi_Series_Comparison
